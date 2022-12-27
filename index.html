@@ -112,15 +112,15 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
             if (years != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = years + " years " + days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = years + " y " + days + " d " + hours + " h " + minutes + " m " + seconds + " s ";
             } else if (days != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = days + " d " + hours + " h " + minutes + " m " + seconds + " s ";
              } else if (hours != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = hours + " hours " + minutes + " minutes " + seconds + " seconds ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = hours + " h " + minutes + " m " + seconds + " s ";
              } else if (minutes != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = minutes + " minutes " + seconds + " seconds ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = minutes + " m " + seconds + " s ";
              } else {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = seconds + " seconds ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = seconds + " s ";
              }
           // code written up by chatgpt xx love you mwah
           // If the count down is finished, write some text
