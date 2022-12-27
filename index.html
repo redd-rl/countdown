@@ -1,0 +1,93 @@
+<style>
+    body {
+      background-color: black;
+    }
+    div {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+    }
+    #shadowBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        border: 3px solid black;
+    }
+    
+    .rainbow {
+        text-align: center;
+        text-decoration: underline;
+        font-size: 62px;
+        background-color: white;
+        font-family: monospace;
+        letter-spacing: 5px;
+    }
+    .rainbow_text_animated {
+        background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 202px;
+        animation: rainbow_animation 6s ease-in-out infinite;
+        background-size: 400% 100%;
+    }
+    
+    @keyframes rainbow_animation {
+        0%,100% {
+            background-position: 0 0;
+        }
+    
+        50% {
+            background-position: 100% 0;
+        }
+    }
+    </style>
+<!-- Display the countdown timer in an element -->
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 27, 2022 01:57:24 PM").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementsByClassName("rainbow_text_animated")[0].textContent = + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementsByClassName("rainbow_text_animated")[0].textContent = "EXPIRED";
+  }
+}, 1000);
+</script>
+    <div id="shadowBox">
+        <h1 class="rainbow_text_animated" id="demo"> poop! </h1>
+    </div>
