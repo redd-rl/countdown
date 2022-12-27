@@ -97,17 +97,10 @@
         </audio>
         <script>
            var audio = document.getElementById("divAudio");
+           audio.muted = false;
            audio.volume = 0.2;
-           var hasInit = false;
-           function playMusic()
-           {
-              if(!hasInit)
-              {
-                  hasInit = true;
-                  Audio.play();
-              }
-           }
-        </script>
+           
+          </script>
 
             <div id="shadowBox">
                 <h1 class="rainbow_text_animated" id="demo"> Sample Text </h1>
