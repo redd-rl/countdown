@@ -45,6 +45,7 @@
                 font-size: 202px;
                 animation: rainbow_animation 6s ease-in-out infinite;
                 background-size: 400% 100%;
+                white-space:pre;
             }
 
             @keyframes rainbow_animation {
@@ -62,8 +63,16 @@
 
         <script>
         // Set the date we're counting down to
-        var currentYear = new Date().getFullYear() + 1;
-        var countDownDate = new Date("Feb 14, " + currentYear + " 11:36:00 PM GMT+1 (CET)").getTime();
+        var currentYear = new Date().getFullYear();
+        var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+        var now = new Date().getTime();
+        if (countDownDate < now) {
+              var currentYear = new Date().getFullYear()+1;
+              var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+        } else {
+              var currentYear = new Date().getFullYear();
+              var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+        }
 
         // Update the count down every 1 second
         var x = setInterval(function() {
@@ -113,22 +122,27 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
             if (years != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = years + " y " + days + " d " + hours + " h " + minutes + " m " + seconds + " s ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = years + " y\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += days + " d\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += hours + " h\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += minutes + " m\r\n"; 
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += seconds + " s\r\n";
             } else if (days != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = days + " d " + hours + " h " + minutes + " m " + seconds + " s ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = days + " d\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += hours + " h\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += minutes + " m\r\n"; 
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += seconds + " s\r\n";
              } else if (hours != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = hours + " h " + minutes + " m " + seconds + " s ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = hours + " h\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += minutes + " m\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += seconds + " s\r\n";
              } else if (minutes != 0) {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = minutes + " m " + seconds + " s ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = minutes + " m\r\n";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += seconds + " s\r\n";
              } else {
-                document.getElementsByClassName("rainbow_text_animated")[0].textContent = seconds + " s ";
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent += seconds + " s\r\n";
              }
           // code written up by chatgpt xx love you mwah
-          // If the count down is finished, write some text
-          if (distance < 0) {
-            clearInterval(x);
-            document.getElementsByClassName("rainbow_text_animated")[0].textContent = "EXPIRED";
-          }
         }, 1000);
         </script>
         <audio autoplay loop id="bgmusic">
