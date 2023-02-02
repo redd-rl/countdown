@@ -13,8 +13,8 @@
     var deactivationTimerHandler;
     var reactivationTimerHandler;
     var animationHandler;
-		var SCREEN_WIDTH = window.innerWidth
-    var SCREEN_HEIGHT = window.innerHeight
+    var SCREEN_WIDTH = window.innerWidth;
+    var SCREEN_HEIGHT = window.innerHeight;
     // objects
 
     var particleColors = {
