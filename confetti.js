@@ -75,6 +75,7 @@
 
   function SetGlobals() {
     canvas = document.createElement('canvas');
+    canvas.id = "confetti";
     ctx = canvas.getContext("2d");
     W = window.innerWidth;
     H = window.innerHeight;
