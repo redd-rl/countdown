@@ -1,7 +1,7 @@
 
   var currentDate = new Date();
   var currentYear = new Date().getFullYear();
-  var targetCountdownDay = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)");
+  var targetCountdownDay = new Date("Feb 2, " + currentYear + " 12:00:00 AM GMT+1 (CET)");
   var scriptAdded = false;
   
   function checkDate() {
