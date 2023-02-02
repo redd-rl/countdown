@@ -7,7 +7,7 @@ var SCREEN_WIDTH = window.innerWidth,
 
     // create canvas
     canvas = document.createElement('canvas'),
-    canvas.id = "fireworks",
+    canvas.setAttribute("id", "fireworks"),
     context = canvas.getContext('2d'),
     particles = [],
     rockets = [],
