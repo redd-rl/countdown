@@ -13,7 +13,8 @@
     var deactivationTimerHandler;
     var reactivationTimerHandler;
     var animationHandler;
-
+		var SCREEN_WIDTH = window.innerWidth
+    var SCREEN_HEIGHT = window.innerHeight
     // objects
 
     var particleColors = {
@@ -62,7 +63,6 @@
     }
 
     function SetGlobals() {
-        canvas = document.getElementById("canvas");
         ctx = canvas.getContext("2d");
         W = window.innerWidth;
         H = window.innerHeight;
@@ -70,6 +70,7 @@
         canvas.height = H;
     }
 
+    
     function InitializeConfetti() {
         particles = [];
         animationComplete = false;
@@ -81,6 +82,7 @@
     }
 
 $(document).ready(function() {
+		canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
     SetGlobals();
     InitializeConfetti();
@@ -159,7 +161,7 @@ $(document).ready(function() {
     }
     function stepParticle(particle, particleIndex) {
         particle.tiltAngle += particle.tiltAngleIncremental;
-        particle.y += (Math.cos(angle + particle.d) + 3 + particle.r / 2) / 2;
+        particle.y += (Math.cos(angle + particle.d) + 3 + particle.r / 2) / 10;
         particle.x += Math.sin(angle);
         particle.tilt = (Math.sin(particle.tiltAngle - (particleIndex / 3))) * 15;
     }
@@ -176,6 +178,12 @@ $(document).ready(function() {
         canvas.width = W;
         canvas.height = H;
         (function animloop() {
+        		if (SCREEN_WIDTH != window.innerWidth) {
+                canvas.width = SCREEN_WIDTH = window.innerWidth;
+            }
+            if (SCREEN_HEIGHT != window.innerHeight) {
+                canvas.height = SCREEN_HEIGHT = window.innerHeight;
+            }
             if (animationComplete) return null;
             animationHandler = requestAnimFrame(animloop);
             return Draw();
