@@ -19,7 +19,7 @@
       document.body.appendChild(confetti);
     }
     if (currentDate > targetCountdownDay) {
-      clearInterval(checkDateInterval);
+      scriptAdded = false;
       document.getElementById("fireworks").remove();
       document.getElementById("confetti").remove();
     }
