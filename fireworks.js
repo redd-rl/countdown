@@ -13,6 +13,7 @@ var SCREEN_WIDTH = window.innerWidth,
     MAX_PARTICLES = 400,
     colorCode = 0;
 
+
 // init
 $(document).ready(function() {
     document.body.appendChild(canvas);
