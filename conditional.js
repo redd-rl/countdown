@@ -2,11 +2,12 @@
   var currentDate = new Date();
   var currentYear = new Date().getFullYear();
   var targetCountdownDay = new Date("Feb 2, " + currentYear + " 12:00:00 AM GMT+1 (CET)");
+  var stopDay = new Date("Feb 2, " + currentYear + " 11:59:59 PM GMT+1 (CET)");
   var scriptAdded = false;
   
   function checkDate() {
     currentDate = new Date();
-    if (currentDate >= targetCountdownDay && !scriptAdded) {
+    if (currentDate > targetCountdownDay && currentDate < stopDay&& !scriptAdded) {
       scriptAdded = true;
       var fireworks = document.createElement("script");
       fireworks.src = "fireworks.js";
@@ -18,8 +19,9 @@
       confetti.id = "confetti";
       document.body.appendChild(confetti);
     }
-    if (currentDate > targetCountdownDay) {
+    if (currentDate > stopDay) {
       scriptAdded = false;
+      console.log("clearing")
       document.getElementById("fireworks").remove();
       document.getElementById("confetti").remove();
     }
