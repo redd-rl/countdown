@@ -54,18 +54,18 @@
         }
     }
 
-    $(document).ready(function () {
-        SetGlobals();
-        InitializeButton();
-        InitializeConfetti();
+  $(document).ready(function() {
+    document.body.appendChild(canvas);
+    SetGlobals();
+    InitializeConfetti();
+    canvas.width = SCREEN_WIDTH;
+    canvas.height = SCREEN_HEIGHT;
 
-        $(window).resize(function () {
-            W = window.innerWidth;
-            H = window.innerHeight;
-            canvas.width = W;
-            canvas.height = H;
-        });
-
+    $(window).resize(function() {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
     });
 
     function InitializeButton() {
