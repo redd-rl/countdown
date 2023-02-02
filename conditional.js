@@ -10,16 +10,18 @@
       scriptAdded = true;
       var fireworks = document.createElement("script");
       fireworks.src = "fireworks.js";
+      fireworks.id = "fireworks";
       document.body.appendChild(fireworks);
 
       var confetti = document.createElement("script");
       confetti.src = "confetti.js";
+      confetti.id = "confetti";
       document.body.appendChild(confetti);
     }
     if (currentDate > targetCountdownDay) {
       clearInterval(checkDateInterval);
-      document.querySelectorAll("script[src='fireworks.js']").forEach(script => script.remove());
-      document.querySelectorAll("script[src='confetti.js']").forEach(script => script.remove());
+      document.getElementById("fireworks").remove();
+      document.getElementById("confetti").remove();
     }
   }
 
