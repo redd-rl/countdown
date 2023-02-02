@@ -1,17 +1,24 @@
-<div onmouseover="playMusic()">
-    <body>
+<!DOCTYPE html>
+<html>
+    <head>
         <link rel="stylesheet" href="mystyle.css">
-        <!-- Display the countdown timer in an element -->
-        <p id="demo"></p>
+        <link href="favicon-light.png" rel="icon" media="(prefers-color-scheme: light)"/>
+        <link href="favicon-dark.png" rel="icon" media="(prefers-color-scheme: dark)"/>
+    </head>
+    <div onmouseover="playMusic()">
+        <body>
+            <!-- Display the countdown timer in an element -->
+            <p id="demo"></p>
 
-        <script src="timer.js"> </script>
-        <audio autoplay loop id="bgmusic">
-          <source src="https://cdn.discordapp.com/attachments/382404542245109772/1057180414139179018/yt1s.com_-_Hyper_Spoiler.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-        </audio>
-        <script src="music.js"></script>
-            <div id="shadowBox">
-                <h1 class="rainbow_text_animated" id="demo"> Sample Text </h1>
-            </div>
-    </body>
-</div>
+            <script src="timer.js"> </script>
+            <audio autoplay loop id="bgmusic">
+              <source src="https://cdn.discordapp.com/attachments/382404542245109772/1057180414139179018/yt1s.com_-_Hyper_Spoiler.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+            </audio>
+            <script src="music.js"></script>
+                <div id="shadowBox">
+                    <h1 class="rainbow_text_animated" id="demo"> Sample Text </h1>
+                </div>
+        </body>
+    </div>
+</html>
