@@ -74,8 +74,7 @@
   }
 
   function SetGlobals() {
-    canvas = document.createElement('canvas2');
-    console.log(document);
+    canvas = document.createElement('canvas');
     ctx = canvas.getContext("2d");
     W = window.innerWidth;
     H = window.innerHeight;
