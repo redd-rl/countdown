@@ -1,3 +1,4 @@
+
 (function () {
     // globals
     var canvas;
@@ -82,7 +83,8 @@
     }
 
 $(document).ready(function() {
-		canvas = document.createElement("canvas");
+	canvas = document.createElement("canvas");
+    canvas.id = "confettiCanvas";
     document.body.appendChild(canvas);
     SetGlobals();
     InitializeConfetti();
