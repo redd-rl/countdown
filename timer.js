@@ -12,7 +12,13 @@
 
         // Update the count down every 1 second
         var x = setInterval(function() {
-            countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+            if (countDownDate < now) {
+              currentYear = new Date().getFullYear();
+              countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+            } else {
+              currentYear = new Date().getFullYear()+1;
+              countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+            }
              // Get today's date and time
             var now = new Date().getTime();
             var distance = countDownDate - now;
