@@ -1,13 +1,13 @@
 // Set the date we're counting down to
         var currentYear = new Date().getFullYear();
-        var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+        var countDownDate = new Date("Feb 3, " + currentYear + " 4:40:00 PM GMT+1 (CET)").getTime();
         var now = new Date().getTime();
         if (countDownDate < now) {
               var currentYear = new Date().getFullYear()+1;
-              var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+              var countDownDate = new Date("Feb 3, " + currentYear + " 4:40:00 PM GMT+1 (CET)").getTime();
         } else {
               var currentYear = new Date().getFullYear();
-              var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+              var countDownDate = new Date("Feb 3, " + currentYear + " 4:40:00 PM GMT+1 (CET)").getTime();
         }
 
         // Update the count down every 1 second
