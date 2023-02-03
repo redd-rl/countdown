@@ -1,21 +1,25 @@
 // Set the date we're counting down to
         var currentYear = new Date().getFullYear();
-        var countDownDate = new Date("Feb 3, " + currentYear + " 4:45:00 PM GMT+1 (CET)").getTime();
+        var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
         var now = new Date().getTime();
         if (countDownDate < now) {
               var currentYear = new Date().getFullYear()+1;
-              var countDownDate = new Date("Feb 3, " + currentYear + " 4:45:00 PM GMT+1 (CET)").getTime();
+              var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
         } else {
               var currentYear = new Date().getFullYear();
-              var countDownDate = new Date("Feb 3, " + currentYear + " 4:45:00 PM GMT+1 (CET)").getTime();
+              var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
         }
 
         // Update the count down every 1 second
         var x = setInterval(function() {
-
+                
              // Get today's date and time
             var now = new Date().getTime();
             var distance = countDownDate - now;
+            if (countDownDate < now) {
+              var currentYear = new Date().getFullYear()+1;
+              var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+            }
 
             // Calculate the number of days until the countdown date
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -75,8 +79,14 @@
              } else if (minutes > 0) {
                 document.getElementsByClassName("rainbow_text_animated")[0].textContent = minutes + " m\r\n";
                 document.getElementsByClassName("rainbow_text_animated")[0].textContent += seconds + " s\r\n";
-             } else {
+             } else if (seconds > 0) {
                 document.getElementsByClassName("rainbow_text_animated")[0].textContent += seconds + " s\r\n";
-             }
+             } else if (seconds == 0) {
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = " Expired\r\n"; 
+            } else {
+                document.getElementsByClassName("rainbow_text_animated")[0].textContent = "Error\r\n";
+                var currentYear = new Date().getFullYear()+1;
+                var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
+            }
           // code written up by chatgpt xx love you mwah
         }, 1000);
