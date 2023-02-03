@@ -16,6 +16,7 @@ var SCREEN_WIDTH = window.innerWidth,
 
 // init
 $(document).ready(function() {
+    canvas.id = "fireworksCanvas";
     document.body.appendChild(canvas);
     canvas.width = SCREEN_WIDTH;
     canvas.height = SCREEN_HEIGHT;
