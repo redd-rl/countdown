@@ -23,6 +23,8 @@
       try {
        document.getElementById("fireworks").remove();
        document.getElementById("confetti").remove(); 
+       document.getElementById("fireworksCanvas").remove();
+       document.getElementById("confettiCanvas").remove(); 
       } catch (error) {
         // pass
       }
