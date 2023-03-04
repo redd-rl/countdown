@@ -16,14 +16,10 @@
              // Get today's date and time
             var now = new Date().getTime();
             var distance = countDownDate - now;
-            if (countDownDate > now) {
+            if (countDownDate < now) {
               currentYear = new Date().getFullYear()+1;
               countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
-            } else {
-              currentYear = new Date().getFullYear();
-              countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime(); 
             }
-
             // Calculate the number of days until the countdown date
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
