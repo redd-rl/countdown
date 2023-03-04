@@ -5,7 +5,7 @@
         if (countDownDate < now) {
               var currentYear = new Date().getFullYear()+1;
               var countDownDate = new Date("Feb 14, " + currentYear + " 12:00:00 AM GMT+1 (CET)").getTime();
-
+        }
         // Update the count down every 1 second
         var x = setInterval(function() {
                 
