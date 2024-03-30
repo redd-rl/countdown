@@ -92,7 +92,7 @@ height: 40%;
       letter-spacing: 5px;
   }
   .rainbow_text_animated {
-      background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+      background: linear-gradient(to right, #ff6f00, #850000 , #ff6f00, #850000, #ff6f00);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
