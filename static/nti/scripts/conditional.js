@@ -1,7 +1,7 @@
 var currentDate = new Date();
 var currentYear = new Date().getFullYear();
-var targetCountdownDay = new Date("July 5, " + currentYear + " 12:00:00 AM GMT+1 (CET)");
-var stopDay = new Date("July 5, " + currentYear + " 11:59:59 PM GMT+1 (CET)");
+var targetCountdownDay = new Date("June 5, " + currentYear + " 12:00:00 AM GMT+1 (CET)");
+var stopDay = new Date("June 5, " + currentYear + " 11:59:59 PM GMT+1 (CET)");
 var scriptAdded = false;
 
 function checkDate() {
